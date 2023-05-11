@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success</title>
+    <link rel="stylesheet" href="{% static 'css/success.min.css' %}" />
+    <style>
+      .red-notify {
+        background: rgba(255, 10, 10, 0.09);
+        border-radius: 3px;
+        padding: 3px 7px;
+        color: #ff0a0a;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="page__inner">
+          <picture class="page__picture">
+            <img
+              class="page__img"
+              src="{% static 'images/success.png' %}"
+              alt="success"
+            />
+          </picture>
+          <div class="page__content">
+            <h2 class="page__title">Заказ #0cdd3ff5da оплачен!</h2>
+            <div class="page__text">
+              <span class="red-notify"
+                >Обязательно сохраните данные для входа!</span
+              >
+            </div>
+            <div class="page__text">
+              <span
+                >Ссылка для входа:
+                <b>https://ex-en.ru/accounts/login/</b></span
+              >
+              <br />
+              <span>Ваш логин: <b>{{email}}</b></span>
+              <br />
+              <span>Ваш пароль : <b>{{password}}</b></span>
+            </div>
+            <div class="page__text">
+              Для входа в личный кабинет используйте логин и пароль. Обязательно
+              сохраните его в надежном месте.
+            </div>
+
+            <a href="/calculate/days" class="btn page__btn"
+              >Войти в личный кабинет</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

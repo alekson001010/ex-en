@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+{% if message %}
+{{ message }}
+{% endif %}
+  <form method="post">
+      {% csrf_token %}
+   <p>Вход на сайт</p>
+   <p>Email: <input type="email" name="email"></p>
+   <p><input type="submit" value="Вход"></p>
+  </form>
+
+<div>
+    <p>email: {{ email }}</p>
+    <p>password: {{ password }}</p>
+</div>
+</body>
+</html>

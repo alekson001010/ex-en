@@ -1,0 +1,926 @@
+
+{% extends 'health/main.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+{% endblock css %} {% block title %} Unsubscribe {% endblock title%} 
+
+{% block content %}
+<style>
+    .eitouo {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .joEfmY {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .joEfmY {
+            flex-direction: column;
+        }
+    }
+
+    .hKpMVO {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .ibWXMi {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .lcORZa {
+        width: 100%;
+        max-width: calc(1255px);
+        margin: 0px auto;
+        padding: 0px 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .lcORZa {
+            max-width: calc(352px);
+            padding: 0px 16px;
+        }
+    }
+
+    .Odwyt {
+        padding-top: 112px;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 768px) {
+        .Odwyt {
+            flex-direction: column-reverse;
+            padding-top: 80px;
+        }
+    }
+
+    .diEKat {
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+        background-color: rgb(247, 247, 247);
+        border-radius: 40px;
+        margin-right: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .diEKat {
+            margin-top: 20px;
+            margin-right: 0px;
+            height: 200px;
+            border-radius: 20px;
+        }
+    }
+
+    .diEKat::before {
+        content: "";
+        position: absolute;
+        inset: 0px;
+        margin-top: -90px;
+        background-image: url("../static/images/header-picture.png");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        border-radius: 0px 0px 40px 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .diEKat::before {
+            margin-top: -14px;
+            background-size: 200px;
+            border-radius: 0px 0px 20px 20px;
+        }
+    }
+
+    .dgsFTp {
+        padding: 42px 100px;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        max-width: 700px;
+        min-height: 500px;
+        background-color: rgb(247, 247, 247);
+        border-radius: 40px;
+        background-image: url("../static/images/header-content-picture.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    @media screen and (max-width: 992px) {
+        .dgsFTp {
+            padding: 42px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .dgsFTp {
+            padding: 20px;
+            min-height: auto;
+            border-radius: 20px;
+        }
+    }
+
+    .ihzIpF {
+        color: rgb(0, 0, 0);
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 72px;
+        line-height: 72px;
+        text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 992px) {
+        .ihzIpF {
+            font-size: 52px;
+            line-height: 52px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .ihzIpF {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+
+    .iAQRll {
+        margin-top: 16px;
+        color: rgb(135, 135, 135);
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .iAQRll {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    .fZstCv {
+        margin-top: 160px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .fZstCv {
+            max-width: 320px;
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .gxUgbg {
+        color: rgb(0, 0, 0);
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 64px;
+        line-height: 64px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 992px) {
+        .gxUgbg {
+            font-size: 48px;
+            line-height: 48px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .gxUgbg {
+            max-width: 288px;
+            font-size: 40px;
+            line-height: 40px;
+        }
+    }
+
+    .bTytQV {
+        padding-left: 16px;
+        margin: 24px 0px 38px;
+        color: rgb(135, 135, 135);
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        line-height: 34px;
+        list-style: disc;
+    }
+
+    @media screen and (max-width: 992px) {
+        .bTytQV {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .bTytQV {
+            max-width: 288px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    .hdnORt {
+        display: table;
+        margin: 0px auto;
+        padding: 9px 26px 5px;
+        color: rgb(255, 255, 255);
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        background-color: rgb(155, 81, 227);
+    }
+
+    @media screen and (max-width: 768px) {
+        .hdnORt {
+            font-size: 18px;
+        }
+    }
+
+    .hLEjiC {
+        display: grid;
+        row-gap: 160px;
+        padding: 160px 0px;
+    }
+
+    @media screen and (max-width: 992px) {
+        .hLEjiC {
+            row-gap: 120px;
+            padding: 120px 0px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .hLEjiC {
+            row-gap: 80px;
+            padding: 80px 0px;
+        }
+    }
+
+    .hjoYLt {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hjoYLt {
+            flex-direction: column;
+        }
+    }
+
+    .alsni {
+        max-width: 495px;
+    }
+
+    @media screen and (max-width: 992px) {
+        .alsni {
+            max-width: 420px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .alsni {
+            max-width: none;
+        }
+    }
+
+    .lZIFG {
+        margin-bottom: 16px;
+        color: rgb(0, 0, 0);
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 64px;
+        line-height: 64px;
+        text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 992px) {
+        .lZIFG {
+            font-size: 48px;
+            line-height: 48px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .lZIFG {
+            max-width: 288px;
+            font-size: 40px;
+            line-height: 40px;
+        }
+    }
+
+    .flLfVg {
+        color: rgb(135, 135, 135);
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    @media screen and (max-width: 992px) {
+        .flLfVg {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .flLfVg {
+            max-width: 288px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    .ieKbDe {
+        position: relative;
+        max-width: 598px;
+        width: 100%;
+        height: 100%;
+        background: rgb(246, 246, 246);
+        border-radius: 40px;
+        margin-left: 32px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .ieKbDe {
+            max-width: none;
+            height: 200px;
+            margin-left: 0px;
+            margin-top: 60px;
+            border-radius: 20px;
+        }
+    }
+
+    .hjoYLt:nth-child(1) .sc-dhhpFS::after {
+        background-image: url("../static/images/picture-1.png");
+    }
+
+    @media screen and (max-width: 992px) {
+        .hjoYLt:nth-child(1) .sc-dhhpFS::after {
+            background-size: 220px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .hjoYLt:nth-child(1) .sc-dhhpFS::after {
+            background-size: 166px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .ieKbDe::after {
+            margin-top: -40px;
+        }
+    }
+
+    .ieKbDe::after {
+        content: "";
+        position: absolute;
+        inset: 0px;
+        margin-top: -74px;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        border-radius: 0px 0px 40px 40px;
+    }
+
+    .hjoYLt:nth-child(2) {
+        flex-direction: row-reverse;
+    }
+
+    .hjoYLt {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    .alsni {
+        max-width: 495px;
+    }
+
+    .hjoYLt:nth-child(2) .sc-dhhpFS {
+        margin-left: 0px;
+        margin-right: 32px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hjoYLt:nth-child(2) {
+            flex-direction: column;
+        }
+    }
+
+    .hjoYLt:nth-child(2) .sc-dhhpFS::after {
+        background-image: url("../static/images/picture-2.png");
+    }
+
+    @media screen and (max-width: 768px) {
+        .hjoYLt:nth-child(2) .sc-dhhpFS::after {
+            background-size: 198px;
+        }
+    }
+
+    .FKpHr {
+        padding-bottom: 160px;
+    }
+
+    @media screen and (max-width: 992px) {
+        .FKpHr {
+            padding-bottom: 120px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .FKpHr {
+            padding-bottom: 80px;
+        }
+    }
+
+    .krYcRu {
+        display: grid;
+        grid-template-columns: minmax(auto, 580px) minmax(600px, 1fr);
+        background-color: rgb(246, 246, 246);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 43px;
+        border-radius: 20px;
+        min-height: 464px;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 992px) {
+        .krYcRu {
+            grid-template-columns: minmax(auto, 600px) minmax(520px, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .krYcRu {
+            grid-template-columns: 1fr;
+            grid-template-rows: 270px;
+            min-height: auto;
+        }
+    }
+
+    .hdXwgF {
+        background-image: url("../static/images/form-picture.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .faHabO {
+        padding: 40px 60px;
+        display: flex;
+    }
+
+    @media screen and (max-width: 992px) {
+        .faHabO {
+            padding: 40px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .faHabO {
+            padding: 40px 20px;
+            min-height: 420px;
+        }
+    }
+
+    .iyoszK {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .fSvvET {
+        margin-bottom: 8px;
+        display: grid;
+        grid-auto-flow: column;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .fSvvET {
+            grid-auto-flow: row;
+            -webkit-box-pack: center;
+            justify-content: center;
+            row-gap: 20px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .faHabO .sc-bQtnlh,
+    .faHabO .sc-dmyOCR,
+    .faHabO .sc-evXUcO,
+    .faHabO .sc-cmnYtw,
+    .faHabO .sc-bVhkf {
+        color: rgb(58, 115, 145);
+        font-family: Arial, sans-serif;
+    }
+
+    .dlPfcD {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .dlPfcD {
+            text-align: center;
+        }
+    }
+
+    .faHabO .sc-fIzWTo {
+        column-gap: 12px;
+    }
+
+    .emRelR {
+        display: inline-grid;
+        grid-auto-flow: column;
+        column-gap: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .emRelR {
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+    }
+
+    .faHabO .sc-heFykY:checked+button {
+        font-weight: normal;
+        background: rgb(155, 81, 227);
+        color: rgb(255, 255, 255);
+    }
+
+    .bARhFH:checked+button {
+        box-shadow: none;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgb(92, 136, 243) 0%, rgb(152, 180, 249) 100%);
+    }
+
+    .faHabO .sc-dmyOCR {
+        padding: 5px 16px;
+        font-size: 16px;
+        line-height: 22px;
+        box-shadow: none;
+        background-color: rgb(246, 246, 246);
+        border-radius: 30px;
+    }
+
+    .faHabO .sc-bQtnlh,
+    .faHabO .sc-dmyOCR,
+    .faHabO .sc-evXUcO,
+    .faHabO .sc-cmnYtw,
+    .faHabO .sc-bVhkf {
+        color: rgb(58, 115, 145);
+        font-family: Arial, sans-serif;
+    }
+
+    .dCeQUY {
+        font-family: Lato, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        border-width: 0px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgba(158, 167, 169, 0.4) 4px 4px 16px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 4px 16px;
+        cursor: pointer;
+    }
+
+    .faHabO .sc-dmyOCR {
+        padding: 5px 16px;
+        font-size: 16px;
+        line-height: 22px;
+        box-shadow: none;
+        background-color: rgb(246, 246, 246);
+        border-radius: 30px;
+    }
+
+    .faHabO .sc-bQtnlh,
+    .faHabO .sc-dmyOCR,
+    .faHabO .sc-evXUcO,
+    .faHabO .sc-cmnYtw,
+    .faHabO .sc-bVhkf {
+        color: rgb(58, 115, 145);
+        font-family: Arial, sans-serif;
+    }
+
+    .dCeQUY {
+        font-family: Lato, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        border-width: 0px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgba(158, 167, 169, 0.4) 4px 4px 16px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 4px 16px;
+        cursor: pointer;
+    }
+
+    .fPDlYw {
+        display: flex;
+        height: 100%;
+    }
+
+    .ckgdcD {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dueVnP {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 20px;
+        margin: 8px 0px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .dueVnP {
+            grid-auto-flow: row;
+            row-gap: 20px;
+        }
+    }
+
+    .cGSGgU {
+        width: 100%;
+    }
+
+    .faHabO .sc-bQtnlh {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .faHabO .sc-bQtnlh,
+    .faHabO .sc-dmyOCR,
+    .faHabO .sc-evXUcO,
+    .faHabO .sc-cmnYtw,
+    .faHabO .sc-bVhkf {
+        color: rgb(58, 115, 145);
+        font-family: Arial, sans-serif;
+    }
+
+    .kdBdMU {
+        line-height: 24px;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: Montserrat, sans-serif;
+    }
+
+    .gDrJP {
+        width: 100%;
+        display: grid;
+        -webkit-box-pack: start;
+        justify-content: flex-start;
+        row-gap: 12px;
+        margin-top: auto;
+        padding-top: 16px;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .faHabO .sc-cSrtSx {
+            -webkit-box-pack: initial;
+            justify-content: initial;
+        }
+    }
+
+    .faHabO .sc-bctVA {
+        background-color: rgb(155, 81, 227);
+        color: rgb(255, 255, 255);
+    }
+
+    .faHabO .sc-Rbkqr,
+    .faHabO .sc-bctVA {
+        padding: 9px 26px 5px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+    }
+
+    .cCkdv {
+        margin-top: auto;
+        display: inline-grid;
+        padding: 14px 24px;
+        border-width: 0px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: Lato, sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 26px;
+        text-decoration: none;
+    }
+
+    .evctTZ {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .faHabO .sc-cwSeag {
+        color: rgb(58, 115, 145);
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .kcCwva {
+        display: block;
+        font-size: 14px;
+        color: rgb(74, 76, 77);
+    }
+
+    .jA-dqdr {
+        display: grid;
+        row-gap: 8px;
+    }
+
+    .faHabO .sc-jrcTuL,
+    .faHabO .sc-csuSiG {
+        color: rgb(155, 81, 227);
+        font-family: Arial, sans-serif;
+        border-width: 2px;
+        border-color: rgb(155, 81, 227);
+        border-radius: 8px;
+    }
+
+    .faHabO .sc-jrcTuL {
+        padding: 10px 20px;
+    }
+
+    .ftLMzk {
+        box-shadow: rgba(167, 167, 167, 0.1) 0px 1px 4px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        padding: 7px 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        width: 100%;
+    }
+
+    .cGSGgU {
+        width: 100%;
+    }
+
+    .cyjgtC {
+        display: grid;
+        row-gap: 16px;
+        padding-top: 4px;
+    }
+
+    .faHabO .sc-iaFMSK {
+        color: rgb(58, 115, 145);
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .hSVtnd {
+        display: flex;
+        align-items: flex-start;
+        line-height: 16px;
+        font-weight: 400;
+        font-size: 12px;
+        font-family: Montserrat, sans-serif;
+    }
+
+    .faHabO .sc-jVlprr {
+        color: rgb(155, 81, 227);
+    }
+
+    .giNCOO {
+        display: flex;
+        flex-shrink: 0;
+        margin-right: 8px;
+    }
+
+    .faHabO .sc-hdWpuu {
+        margin-top: -3px;
+    }
+
+    .eVVRFa {
+        display: flex;
+        flex-shrink: 0;
+        margin-top: -4px;
+        margin-right: 8px;
+        color: rgb(128, 128, 128);
+    }
+</style>
+
+<body>
+
+    <div>
+        <div class="sc-dYNRft eitouo" style="background: rgb(243, 243, 246);">
+            <main class="sc-fFWqGg joEfmY">
+                <div class="sc-gzJzQT hKpMVO">
+                    <div class="sc-wZnNi ibWXMi">
+                        <div class="sc-iXnsYd lcORZa">
+                            <div class="sc-gqZWON Odwyt">
+                                <div class="sc-jlzoAE diEKat"></div>
+                                <div class="sc-hCbUxz dgsFTp">
+                                    <div class="sc-dfmuPq ihzIpF">Это страница для управления доступом к услуге</div>
+                                    <div class="sc-ibVIrx iAQRll">И здесь мы отвечаем на самые частые вопросы.</div>
+                                </div>
+                            </div>
+                            <div class="sc-iRVFAn fZstCv">
+                                <div class="sc-ipBzsk gxUgbg">У меня возникла проблема, что мне делать?</div>
+                                <ul class="sc-fvchGt bTytQV">
+                                    <li>При возникновении любых проблем, в первую очередь необходимо обратиться в Службу поддержки</li>
+                                    <li>24/7 наши специалисты готовы помочь разобраться с любой возникшей ситуацией</li>
+                                    <li>Для связи с поддержкой просто нажмите кнопку “Обратиться в поддержку”</li>
+                                </ul><a href="mailto:support@bodyloss.ru" class="sc-kQxidK hdnORt">Обратиться в поддержку</a>
+                            </div>
+                            <div class="sc-dFgiJo hLEjiC">
+                                <div class="sc-hDWPob hjoYLt">
+                                    <div class="sc-iXTxzR alsni">
+                                        <div class="sc-eBdXRI lZIFG">Почему за услуги списываются средства?</div>
+                                        <div class="sc-izUEwv flLfVg">Находясь на сайте, вы оформили пробный доступ к услуге. Он автоматически продлевается при помощи рекуррентного платежа, на который вы дали согласие при оплате.</div>
+                                    </div>
+                                    <div class="sc-dhhpFS ieKbDe"></div>
+                                </div>
+                                <div class="sc-hDWPob hjoYLt">
+                                    <div class="sc-iXTxzR alsni">
+                                        <div class="sc-eBdXRI lZIFG">Почему без подтверждения по смс?</div>
+                                        <div class="sc-izUEwv flLfVg">Мы пользуемся рекуррентными платежами, также известные как “автоплатежи” - это возможность выполнять регулярные списания средств с банковской карты покупателя или его электронного кошелька, не требующих повторного ввода реквизитов карты для проведения очередного платежа. <br> <br>Рекуррентные платежи используют такие компании как Яндекс, Vk, Ozon, Kinopoisk, Okko, Mail.ru.</div>
+                                    </div>
+                                    <div class="sc-dhhpFS ieKbDe"></div>
+                                </div>
+                            </div>
+                            <div class="sc-edfeOm FKpHr">
+                                <div class="sc-keCeES krYcRu">
+                                    <div class="sc-kEvSyQ hdXwgF"></div>
+                                    <div class="sc-ixtFef faHabO">
+                                        <div class="sc-lbtWl iyoszK card">
+                                            <div class="sc-bhhwZE fSvvET">
+                                                <h4 class="sc-evXUcO dlPfcD">Выберите способ</h4>
+                                                <div class="sc-fIzWTo emRelR"><label class="sc-eizdkD kuLOXH"><input name="choose-type" type="radio" class="sc-heFykY bARhFH"><button type="button" class="sc-dmyOCR dCeQUY">Карта</button></label><label class="sc-eizdkD kuLOXH"><input name="choose-type" type="radio" class="sc-heFykY bARhFH" checked=""><button type="button" class="sc-dmyOCR dCeQUY">E-mail</button></label></div>
+                                            </div>
+                                            <div class="sc-jLVyhk fPDlYw">
+                                                <form class="sc-fdCYqt ckgdcD">
+                                                    <div class="sc-DRkuH dueVnP">
+                                                        <div class="sc-jnhPJk cGSGgU"><span class="sc-bQtnlh kdBdMU">Номер карты</span></div>
+                                                    </div>
+                                                    <div class="sc-DRkuH dueVnP">
+                                                        <div class="sc-jnhPJk cGSGgU"><label class="sc-iveFHk kBSWdp"><span class="sc-cwSeag kcCwva">Первые 6 цифр</span>
+                                                                <div class="sc-fLcnxK jA-dqdr"><input type="text" placeholder="000000" class="sc-jrcTuL ftLMzk" value=""></div>
+                                                            </label></div>
+                                                        <div class="sc-jnhPJk cGSGgU"><label class="sc-iveFHk kBSWdp"><span class="sc-cwSeag kcCwva">Последние 4 цифры</span>
+                                                                <div class="sc-fLcnxK jA-dqdr"><input type="text" placeholder="0000" class="sc-jrcTuL ftLMzk" value=""></div>
+                                                            </label></div>
+                                                    </div>
+                                                    <div class="sc-DRkuH dueVnP">
+                                                        <div class="sc-jnhPJk cGSGgU">
+                                                            <ul class="sc-fvbgbd cyjgtC">
+                                                                <li class="sc-iaFMSK hSVtnd">
+                                                                    <div class="sc-jVlprr giNCOO"><svg width="23" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.371 6c0-2.21 1.65-4 3.686-4 2.035 0 3.686 1.79 3.686 4v3.079a.921.921 0 1 1-1.843 0V6c0-1.105-.825-2-1.843-2s-1.843.895-1.843 2v3.079a.921.921 0 0 1-1.843 0V6Z"></path>
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.371 9c-2.035 0-3.685 1.79-3.685 4v5c0 2.21 1.65 4 3.685 4h7.371c2.036 0 3.686-1.79 3.686-4v-5c0-2.21-1.65-4-3.686-4h-7.37Z"></path>
+                                                                        </svg></div>Все данные передаются по зашифрованному каналу с использованием протокола TLS. Использование
+                                                                    данной страницы абсолютно безопасно.
+                                                                </li>
+                                                                <li class="sc-iaFMSK hSVtnd">
+                                                                    <div class="sc-hdWpuu eVVRFa"><svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v.5a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5V8Zm.5 3a.5.5 0 0 0-.5.5V16a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4v-4.5a.5.5 0 0 0-.5-.5h-19ZM13 15a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1Z"></path>
+                                                                        </svg></div>Указывается только часть данных, это безопасно
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sc-cSrtSx gDrJP"><button type="submit" class="sc-bctVA cCkdv">Отписаться</button></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+{% endblock content %}

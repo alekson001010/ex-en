@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://client.bodyloss.ru/mycoursefiles/11e97a5d62 -->
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <style data-styled="active" data-styled-version="5.3.6"></style>
+    <title>ZhirStop - Получите свой персональный план по похудению!</title>
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+  </head>
+  <body>
+    <div class="profile-menu">
+      <div class="profile-menu__container">
+          <div class="profile-menu__email">{{ user.email }}</div>
+          <div class="profile-menu__burger">
+              <span></span><span></span><span></span><span></span>
+          </div>
+      </div>
+      <div class="profile-dropdown" style="display: none">
+          <div class="profile-dropdown__container">
+              <ul class="profile-menu__dropdown profile-menu__dropdown--collapsed">
+                  <li class="profile-menu__item">
+                      <a href="{% url 'days' %}" class="profile-menu__link">Главная</a>
+                  </li>
+                  <li class="profile-menu__item">
+                      <a href="{% url 'password' %}" class="profile-menu__link">Настройки</a>
+                  </li>
+                  <li class="profile-menu__item">
+                    <a href="{% url 'logout' %}" class="profile-menu__link">Выход</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+    <main>
+      <div class="single-course">
+        <div class="single-course__container">
+          <h3 class="single-course__title">
+            ZhirStop - Получите свой персональный план по похудению!
+          </h3>
+          <div class="single-course__tiles-wrapper">
+              {% for day in days_list %}
+                     {% if day.number <= allow_days %}
+                         <a href="{{ day.train.id }}/" class="coursesNew-block">
+                     {% else %}
+                         <a href="#" class="coursesNew-block coursesNew-block--disabled">
+                     {% endif %}
+                  <div class="coursesNew-block__img">
+                    <img src="{{ day.image.url }}" alt="img" />
+                  </div>
+                  <div class="coursesNew-block__title">
+                    <div><div>{{ day.h1 }}</div></div>
+                    <svg
+                      width="31"
+                      height="16"
+                      viewBox="0 0 31 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M30.7071 8.70711C31.0976 8.31659 31.0976 7.68342 30.7071 7.2929L24.3431 0.928934C23.9526 0.53841 23.3195 0.53841 22.9289 0.928934C22.5384 1.31946 22.5384 1.95262 22.9289 2.34315L28.5858 8L22.9289 13.6569C22.5384 14.0474 22.5384 14.6805 22.9289 15.0711C23.3195 15.4616 23.9526 15.4616 24.3431 15.0711L30.7071 8.70711ZM-8.74228e-08 9L30 9L30 7L8.74228e-08 7L-8.74228e-08 9Z"
+                        fill="#161239"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="{% static 'js/nav.js' %}"></script>
+
+  </body>
+</html>

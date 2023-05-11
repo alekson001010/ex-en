@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="decor" onsubmit="event.preventDefault(); calculate()">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h3>ну это крч форма</h3>
+        <label for="gender">Gender: </label>
+        <input type="radio" name="genderS" value="male" checked="checked">Male</input>
+        <input type="radio" name="genderS" value="female">Female</input>
+        <input type="number" placeholder="рост" id="height">
+        <input type="number" placeholder="вес" id="weight">
+        <input type="number" name="age" placeholder="возраст" id="age">
+        <label for="cars">Choose a goal:</label>
+        <select id="goal" name="goal">
+            <option value="0.5">Снижение веса</option>
+            <option value="1">Поддержание текущего веса</option>
+            <option value="1.5">Набор веса</option>
+        </select>
+        <label for="activity">choose activity</label>
+        <select id="activity" name="activity">
+            <option value="0.5">Сидячий образ жизни</option>
+            <option value="1">Умеренная активность</option>
+            <option value="1.5">Средняя активность</option>
+            <option value="2">Повышенная активность</option>
+        </select>
+
+        <input type="submit" value="Отправить">
+    </div>
+</form>
+    <div>
+        <h2>Result: </h2>
+        <h3> в день вам нужно сжечь <p id="result"></p></h3>
+    </div>
+
+
+<script>
+    const result = document.getElementById('result')
+    if (localStorage.getItem('result')) {
+        result.innerHTML = localStorage.getItem('result')
+    }
+    function calculate() {
+        var radios = document.getElementsByName('genderS');
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                var gender = radios[i].value
+                break;
+            }
+        }
+        let age = document.querySelector('#age').valueAsNumber
+        let weight = document.querySelector('#weight').valueAsNumber
+        let height = document.querySelector('#height').valueAsNumber
+        {#console.log('gender', gender)#}
+        let goal = parseFloat(document.querySelector('#goal').value)
+        let activity = parseFloat(document.querySelector('#activity').value)
+        {#дальше вот здесь должна быть формула рассчета, ну я например все перемножу, а пол переведу в некоторый коэффициент#}
+        if (gender==="male") {gender=1} else {gender=0.8}
+        let callorag = String(age*weight*height*goal*activity*gender)
+
+        result.innerHTML = callorag
+        {#console.log('gend', gender)#}
+        localStorage.setItem('result', callorag)
+    }
+
+</script>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #f69a73;
+    }
+
+    .decor {
+        position: relative;
+        max-width: 400px;
+        margin: 50px auto 0;
+        background: white;
+        border-radius: 30px;
+    }
+
+    .form-left-decoration, .form-right-decoration {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        background: #f69a73;
+        border-radius: 20px;
+    }
+
+    .form-left-decoration {
+        bottom: 60px;
+        left: -30px;
+    }
+
+    .form-right-decoration {
+        top: 60px;
+        right: -30px;
+    }
+
+    .form-left-decoration:before, .form-left-decoration:after, .form-right-decoration:before, .form-right-decoration:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 20px;
+        border-radius: 30px;
+        background: white;
+    }
+
+    .form-left-decoration:before {
+        top: -20px;
+    }
+
+    .form-left-decoration:after {
+        top: 20px;
+        left: 10px;
+    }
+
+    .form-right-decoration:before {
+        top: -20px;
+        right: 0;
+    }
+
+    .form-right-decoration:after {
+        top: 20px;
+        right: 10px;
+    }
+
+    .circle {
+        position: absolute;
+        bottom: 80px;
+        left: -55px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    .form-inner {
+        padding: 50px;
+    }
+
+    .form-inner input, .form-inner textarea {
+        display: block;
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        background: #E9EFF6;
+        line-height: 40px;
+        border-width: 0;
+        border-radius: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-inner input[type="submit"] {
+        margin-top: 30px;
+        background: #f69a73;
+        border-bottom: 4px solid #d87d56;
+        color: white;
+        font-size: 14px;
+    }
+
+    .form-inner textarea {
+        resize: none;
+    }
+
+    .form-inner h3 {
+        margin-top: 0;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        color: #707981;
+    }
+
+</style>
+</body>
+</html>

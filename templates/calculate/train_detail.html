@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=q, initial-scale=1.0" />
+    <title>Day</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/train_detail/styles.css' %}" />
+  </head>
+  <body>
+    <div class="profile-menu">
+      <div class="profile-menu__container">
+        <div class="profile-menu__email">{{ user.email }}</div>
+        <div class="profile-menu__burger">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="profile-dropdown" style="display: none">
+        <div class="profile-dropdown__container">
+          <ul class="profile-menu__dropdown profile-menu__dropdown--collapsed">
+            <li class="profile-menu__item">
+              <a href="{% url 'days' %}" class="profile-menu__link">Главная</a>
+            </li>
+            <li class="profile-menu__item">
+              <a href="{% url 'password' %}" class="profile-menu__link"
+                >Настройки</a
+              >
+            </li>
+            <li class="profile-menu__item">
+              <a href="{% url 'logout' %}" class="profile-menu__link">Выход</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="top">
+        <div class="top-container">
+          <div class="back">
+            <a href="{% url 'days' %}">Назад</a>
+          </div>
+        </div>
+      </section>
+      <div class="content">
+        <h1>ZhirStop - Получите свой персональный план по похудению!</h1>
+        <h1>День 1</h1>
+        <div class="cards">
+          <div class="el practiceBtn">
+            <img src="{% static 'images/practice.svg' %}" alt="" />
+            <p>Практика</p>
+          </div>
+          <div class="el mealBtn">
+            <img src="{% static 'images/meal.svg' %}" alt="" />
+            <p>Питание</p>
+          </div>
+          <div class="el scrabBtn">
+            <img src="{% static 'images/recipe.svg' %}" alt="" />
+            <p>Скраб</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="practice" style="display: none">
+        <h1>Тренировка</h1>
+        <h2>{{ train.h2 }}</h2>
+        {{ train.content|safe }}
+        <div class="pink">{{ train.advice.content|safe }}</div>
+        <div class="practice__block">
+          {% for exercise in train.exercises.all %}
+          <h3>Упражнение 1</h3>
+          <h2 class="title">{{ exercise.name }}</h2>
+          <div class="practice__row">
+            <div class="practice__col">
+              <h3>Работающие мышцы:</h3>
+              <ul class="dots">
+                {% for muscle in exercise.muscles.all %}
+                <li>{{ muscle.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <img src="{{ exercise.image.url }}" alt="" />
+          </div>
+          <div class="video">
+            <iframe
+              src="{{ exercise.video }}"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media;"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+
+          <h3>Техника выполнения:</h3>
+          {{ exercise.content|safe }}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="meal" style="display: none">
+        <div class="meal-content">
+          <div class="row row-sb">
+            <div class="title">Питание</div>
+            <div class="cart">
+              <p>Завтрак</p>
+              <img src="meal-pic.svg" alt="" />
+            </div>
+          </div>
+          <div class="name">{{ train.nutrition.name }}</div>
+          <p class="p">КБЖУ одной порции</p>
+          <div class="row">
+            <img src="{{ train.nutrition.image.url }}" alt="" />
+            <div class="col">
+              <div class="ccal">
+                <p>Калории</p>
+                <span>{{ train.nutrition.callories }}</span>
+              </div>
+              <ul class="cbjy">
+                <li>
+                  <p>Белки</p>
+                  <span>{{ train.nutrition.protein }}г</span>
+                </li>
+                <li>
+                  <p>Жиры</p>
+                  <span>{{ train.nutrition.fats }}г</span>
+                </li>
+                <li>
+                  <p>Углеводы</p>
+                  <span>{{ train.nutrition.carbohydrates }}г</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+              <h4>Ингредиенты (на 4 порции)</h4>
+              <ul class="meal__ing">
+                {% for ingridient in train.nutrition.ingredients.all %}
+                <li>{{ ingridient.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="video">
+            <iframe
+              src="{{ train.nutrition.video }}"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media;"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+          <h3>Способ приготовления</h3>
+          <ul class="ul">
+            {{ train.nutrition.description|safe }}
+          </ul>
+        </div>
+      </div>
+      <div class="scrab" style="display: none">
+        <span>{{ train.scrub.description }}</span>
+        <h2>«{{ train.scrub.name }}»</h2>
+        <div class="row">
+          <img src="{{ train.scrub.image.url }}" alt="" />
+          <div>
+            <div class="title-scrab">Состав:</div>
+            {{ train.scrub.components|safe }}
+          </div>
+        </div>
+        <div class="title-scrab">Способ приготовления:</div>
+        <p style="font-size: 18px; line-height: 1.5">
+          {{ train.scrub.instruction }}
+        </p>
+      </div>
+    </main>
+
+    <script src="{% static 'js/train_detail/main.script.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
+  </body>
+</html>

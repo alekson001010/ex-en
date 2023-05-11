@@ -1,0 +1,60 @@
+{% extends 'health/main.html' %} {% load static %} {% block title %}Login
+{%endblock title %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock css %} {% block content %}
+<section class="login">
+  <div class="container">
+    <h2 class="login-title">ВХОД В ЛИЧНЫЙ КАБИНЕТ</h2>
+
+    <div class="login__main">
+      <!-- <img
+        src="img/loginmmainpicture.png"
+        alt="login"
+        class="login__main-img"
+      /> -->
+
+      <div class="login__main-left">
+        <div class="login__main-left__img"></div>
+      </div>
+
+      <div class="login__main-right">
+        <img
+          src="{% static 'img/icons/logo.png' %}"
+          alt="loginlogo"
+          class="login__main-right__logo"
+        />
+        <h4 class="login-title__small">ВХОД В ЛИЧНЫЙ КАБИНЕТ</h4>
+        <p class="login__main-right__descr">Укажите почту и пароль</p>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="input">
+            <input
+              class="input__email"
+              name="email"
+              placeholder="E-mail"
+              type="email"
+            />
+            <input
+              required="@"
+              class="input__pass"
+              placeholder="Введите пароль"
+              type="password"
+              name="password"
+            />
+          </div>
+          <p class="login__main-right__forget">
+            Забыли пароль? <span>Восстановить</span>
+          </p>
+          <button
+            style="border: none"
+            class="login__main-right__btn"
+            type="submit"
+          >
+            Войти
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,577 @@
+{% extends 'health/main.html' %} 
+{% load static %} 
+{% block title %}Excellent Enbody{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="{% static 'images/favicon-32x32.png' %}"
+/>
+{% endblock css %} 
+{% block content %}
+<div id="app">
+  <div class="version1">
+    <header class="header">
+      <div class="header__container container">
+        <a class="header__logo" href="/"
+          ><picture><img src="{% static 'fonts/logo.svg' %}" alt="a" /></picture
+        ></a>
+        <a href="{% url 'login' %}" class="header__button"><span>Личный кабинет</span></a>
+      </div>
+    </header>
+  </div>
+
+  <div class="version1">
+    <div class="main">
+      <picture class="main__bg"><img src="{% static 'images/main-bg.png' %}" alt /></picture
+      ><picture class="main__bg--mobile"
+        ><img src="{% static 'images/main-bg-mobile.png' %}" alt
+      /></picture>
+      <div class="main__container container">
+        <picture class="main__img"
+          ><img src="{% static 'images/main-img.png' %}" alt
+        /></picture>
+        <div class="main__wrapper">
+          <h1 class="main__title">
+            Excellent Enbody <br> <br>
+            Накачай шикарные <br />ягодицы всего за 28 дней
+          </h1>
+          <div class="main__subtitle">
+            Мы знаем, как получить упругую и округлую попу быстро, просто и без
+            надоевших всем упражнений
+          </div>
+          <div class="main__ad">
+            <div class="gift">
+              <picture class="gift__img version1"
+                ><img src="{% static 'fonts/gift.svg' %}" alt
+              /></picture>
+              <div class="gift__text">
+                Все участники курса получают в подарок гайд по созданию
+                креативных постов во Вконтакте
+              </div>
+            </div>
+          </div>
+          <a class="main__btn btn-orange" href="#order-form"
+            >Хочу упругую попку</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="familiar">
+    <div class="familiar__container container">
+      <div class="version1">
+        <h2 class="title familiar__title">Тебе это знакомо?</h2>
+      </div>
+
+      <div class="familiar__list">
+        <div class="familiar__item">
+          Я постоянно приседаю, но результата все нет
+        </div>
+        <div class="familiar__item">Одежда зачастую плохо сидит на фигуре</div>
+        <div class="familiar__item">
+          Вес растет, даже когда я слежу на питанием
+        </div>
+        <div class="familiar__item">
+          Я не понимаю, как правильно тренироваться
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="motivation">
+    <div class="motivation__container container">
+      <div class="version1">
+        <div class="motivation__wrapper">
+          <div class="motivation__circle motivation__circle--no">
+            <div class="motivation__title">нет</div>
+            <div class="motivation__text">
+              целлюлиту, низкой самооценке и мешковатой одежде
+            </div>
+          </div>
+          <div class="motivation__circle motivation__circle--yes">
+            <div class="motivation__title">да</div>
+            <div class="motivation__text">
+              подтянутой попе, упругой и гладкой коже, уверенности в себе
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="result">
+    <div class="version1" style="position: relative;">
+      <div class="result__container container">
+        <div class="result__wrapper">
+          <h2 class="result__title title">
+            После прохождения программы ты получишь
+          </h2>
+          <ul class="result__list">
+            <li class="result__item">
+              Роскошное подтянутое тело без целлюлита
+            </li>
+            <li class="result__item">
+              Упругие и округлые ягодицы, красивые изгибы тела
+            </li>
+            <li class="result__item">
+              Уникальный комплекс упражнений, который подойдет для любого уровня
+              подготовки
+            </li>
+            <li class="result__item">
+              Восхищенные взгляды окружающих, внимание и комплименты
+            </li>
+            <li class="result__item">
+              Комплекс ежедневных привычек для сохранения красоты и молодости
+              на долгие годы
+            </li>
+          </ul>
+        </div>
+        <picture class="result__img"
+          ><img src="{% static 'images/result-img.png' %}" alt
+        /></picture>
+      </div>
+      <picture class="result__bg"
+        ><img src="{% static 'images/result-bg.png' %}" alt
+      /></picture>
+    </div>
+  </div>
+  <div class="version1">
+    <div class="more">
+      <div class="more__container container">
+        <h2 class="more__title">А еще...</h2>
+        <div class="more__wrapper">
+          <div class="more__item">
+            <picture class="more__item-img"
+              ><img src="{% static 'images/more-icon1.png' %}" alt
+            /></picture>
+            <div class="more__item-text">
+              Понятные тренировки<br />в видео-формате
+            </div>
+          </div>
+          <div class="more__item">
+            <picture class="more__item-img"
+              ><img src="{% static 'images/more-icon2.png' %}" alt
+            /></picture>
+            <div class="more__item-text">
+              Рецепты SPA-процедур для подтянутой кожи
+            </div>
+          </div>
+          <div class="more__item">
+            <picture class="more__item-img"
+              ><img src="{% static 'images/more-icon3.png' %}" alt
+            /></picture>
+            <div class="more__item-text">
+              Антицеллюлитный гайд для идеальной попы
+            </div>
+          </div>
+          <div class="more__item">
+            <picture class="more__item-img"
+              ><img src="{% static 'images/more-icon4.png' %}" alt
+            /></picture>
+            <div class="more__item-text">Калькулятор веса и калорий</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="version1">
+    <div class="simplicity">
+      <div class="simplicity__container container">
+        <div class="simplicity__block1">
+          <h2 class="simplicity__block1-title title">
+            Только простота и эффективность
+          </h2>
+          <div class="simplicity__block1-text">
+            Мы покажем тебе, что тренировки могут быть простыми, приятными и в
+            то же время действенными
+          </div>
+        </div>
+        <div class="simplicity__block2">
+          <h2 class="simplicity__block2-title title">долой</h2>
+          <div class="simplicity__block2-text">
+            бесконечные приседания, чрезмерные нагрузки, сложный инвентарь,
+            непонятные упражнения
+          </div>
+          <picture class="simplicity__bg"
+            ><img src="{% static 'images/simplicity-bg.png' %}" alt
+          /></picture>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="get">
+    <div class="get__container container">
+      <picture class="get__img"><img src="{% static 'images/get-img.png' %}" alt /></picture>
+      <div class="get__wrapper">
+        <h2 class="get__title">
+          Получи<br />подтянутую фигуру уже через 28 дней
+        </h2>
+        <div class="get__text">
+          Зарегистрируйся и получи доступ к уникальному курсу
+        </div>
+        <div class="version1">
+          <a class="get__btn btn-orange" href="#order-form"
+            >Хочу упругую попку</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="version1">
+      <picture class="get__bg"><img src="{% static 'images/get-bg.png' %}" alt /></picture>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="steps__container container">
+      <h2 class="steps__title">Как проходят занятия</h2>
+      <div class="version1">
+        <div class="steps__wrapper">
+          <div class="steps__item">
+            <div class="steps__item-num">01</div>
+            <div class="steps__item-block">
+              <div class="steps__item-title">Оплачиваете курс</div>
+              <div class="steps__item-text">
+                После оплаты вы получите на e-mail логин и пароль от личного
+                кабинета с тренировками. Уроки можно смотреть на компьютере или
+                на телефоне.
+              </div>
+            </div>
+          </div>
+          <div class="steps__item">
+            <div class="steps__item-num">02</div>
+            <div class="steps__item-block">
+              <div class="steps__item-title">Заходите на платформу</div>
+              <div class="steps__item-text">
+                Все уроки можно ставить на паузу, перематывать и смотреть в
+                любое удобное время.
+              </div>
+            </div>
+          </div>
+          <div class="steps__item">
+            <div class="steps__item-num">03</div>
+            <div class="steps__item-block">
+              <div class="steps__item-title">Смотрите уроки</div>
+              <div class="steps__item-text">
+                Тренировка проходит в виде повторения за тренером. Вы просто
+                смотрите и повторяете. Техника каждого упражнения объясняется
+                подробно.
+              </div>
+            </div>
+          </div>
+          <div class="steps__item">
+            <div class="steps__item-num">04</div>
+            <div class="steps__item-block">
+              <div class="steps__item-title">
+                Ведете отчетность в личном кабинете
+              </div>
+              <div class="steps__item-text">
+                Следите за динамикой веса, количеством выпитой воды и отмечаете
+                выполненные тренировки.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="version1">
+    <div class="platform">
+      <div class="platform__container container">
+        <h2 class="platform__title title">
+          Удобная платформа<br />для тренировок
+        </h2>
+        <div class="platform__text">
+          Все тренировки, рекомендации по питанию и личный кабинет будут
+          доступны на ПК и в мобильном приложении. Вам не нужно делать закладку
+          в браузере или искать наш сайт, платформа для тренировок расположится
+          прямо на дисплее вашего устройства: смартфона, планшета.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="version1">
+    <div class="what-get">
+      <div class="what-get__container container">
+        <div class="what-get__wrapper">
+          <h2 class="what-get__title title title--color">
+            Что ты получишь в результате?
+          </h2>
+          <ul class="what-get__list">
+            <li class="what-get__item">Полюбишь себя и свое тело</li>
+            <li class="what-get__item">
+              Перестанешь скрывать фигуру под мешковатой одеждой, сможешь
+              покупать все, что захочется
+            </li>
+            <li class="what-get__item">
+              Узнаешь, как эффективно избавляться от лишнего веса
+            </li>
+            <li class="what-get__item">
+              Подтянешь все тело и получишь красивые, упругие ягодицы
+            </li>
+            <li class="what-get__item">
+              Научишься правильно тренироваться без вреда здоровью
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="version1">
+    <div class="order" id="order-form">
+      <div class="order__container container">
+        <div class="order__wrapper">
+          <div class="order__block">
+            <h2 class="order__title title">Начни уже сейчас!</h2>
+            <div class="order__text">
+              Авторский комплекс, благодаря которому ваша форма станет
+              идеальной:
+            </div>
+            <ul class="order__list">
+              <li class="order__item">Антицеллюлитный гайд</li>
+              <li class="order__item">
+                Интенсивная тренировка в видео-формате
+              </li>
+              <li class="order__item">Рецепты SPA-процедур для ягодиц</li>
+              <li class="order__item">Калькулятор веса и калорий</li>
+            </ul>
+            <div class="order__ad">
+              <div class="gift">
+                <picture class="gift__img version1"
+                  ><img src="{% static 'fonts/gift.svg' %}" alt
+                /></picture>
+                <div class="gift__text">
+                  Все участники курса получают в подарок гайд по созданию
+                  креативных постов во Вконтакте
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__card">
+            <div class="order__price">
+              <div class="order__discount">Скидка 97%</div>
+              <div class="order__prices">
+                <div class="order__new-price">
+                  <span>29</span>
+                  <span>₽</span>
+                </div>
+                <div class="order__old-price">
+                  <span>889</span>
+                  <span>₽</span>
+                </div>
+              </div>
+            </div>
+            <div class="order__form">
+              <form id="1" method="POST" class="version1 form form--1">
+                <div class="input-wrap">
+                  <input placeholder="Ваша эл. почта" name="email" id="email" type="email" class="form__email" required>
+                </div>
+                  {% comment %} <input type="hidden" id="js-product-id" name="order[products][]" value="75" > {% endcomment %}
+                  <p class="form__error" style="display: none;">Укажите корректный email</p>
+                  <div class="form__content">
+                    <input type="submit" class="form__button button button--form" value="Оплатить">
+                    <div class="form__check">
+                      <input type="checkbox" id="checkbox-1" class="form__check-input" required>
+                      <label for="checkbox-1" class="form__check-box">
+                        <span class="form__check-text">Нажимая кнопку "Оплатить" Вы даете согласие на 
+                          <a target="_blank" class="form__check-text" href="/policy.pdf">обработку персональных данных</a>, а также подтверждаете ознакомление с 
+                          <a target="_blank" class="form__check-text" href="/offer.pdf">публичной офертой</a> и 
+                          <a target="_blank" class="form__check-text" href="/tariff.pdf">тарифами</a>
+                        </span>
+                      </label>
+                    </div> 
+                    <div class="form__check2">
+                      <input type="checkbox" id="checkbox2-1" class="form__check-input" required> 
+                      <label for="checkbox2-1" class="form__check-box">
+                        <span class="form__check-text">Нажимая кнопку "Оплатить" Вы подтверждаете ознакомление с автоматическими списаниями. 
+                          <b>Первое списание в размере 889₽ через 72 часа</b> после подписки и далее, согласно 
+                          <a href="/tariff.pdf" target="_blank" class="form__check-text">тарифу</a> 
+                          раз в 7 дней 889₽ или 127₽ за день доступа в личный кабинет
+                        </span>
+                        </label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="order__payment">
+                  <picture><source srcset="{% static 'img/icons/visa.png' %}" type="image/webp"><img src="{% static 'img/icons/visa.png' %}" alt="visa"></picture><picture><source srcset="{% static 'img/icons/world.png' %}" type="image/webp"><img src="{% static 'img/icons/world.png' %}" alt="mir"></picture><picture><source srcset="{% static 'img/icons/mastercard.png' %}" type="image/webp"><img src="{% static 'img/icons/mastercard.png' %}" alt="mastercard"></picture>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="version1">
+    <div class="reviews">
+      <div class="reviews__container container">
+        <h2 class="reviews__title title">Они уже решились на изменения</h2>
+        <div class="reviews__slider">
+          <div class="slider">
+            <div class="slider__wrapper">
+              <div class="slider__slide">
+                <div class="slider__name">Карина Лимова</div>
+                <p class="slider__text">
+                  Привести себя в порядок после родов — желание многих мам.
+                  Пыталась найти информацию в интернете, но хватало максимум на
+                  неделю. Мои впечатления: помогает дисциплинированность. С
+                  таким сервисом где уже все собрано для тебя, с учетом твоих
+                  пожеланий, сразу становится проще. Итоги за месяц тренировок:
+                  удалось сбросить вес, наладить питание, получить новую
+                  информацию, тело подтянулось, и это только начало!
+                </p>
+                <picture class="slider__img"
+                  ><img src="{% static 'images/rev1.jpg' %}" alt
+                /></picture>
+              </div>
+              <div class="slider__slide">
+                <div class="slider__name">Марина Афинова</div>
+                <p class="slider__text">
+                  Привести себя в порядок после родов — желание многих мам.
+                  Пыталась найти информацию в интернете, но хватало максимум на
+                  неделю. Мои впечатления: помогает дисциплинированность. С
+                  таким сервисом где уже все собрано для тебя, с учетом твоих
+                  пожеланий, сразу становится проще. Итоги за месяц тренировок:
+                  удалось сбросить вес, наладить питание, получить новую
+                  информацию, тело подтянулось, и это только начало!
+                </p>
+                <picture class="slider__img"
+                  ><img src="{% static 'images/rev3.jpg' %}" alt
+                /></picture>
+              </div>
+              <div class="slider__slide">
+                <div class="slider__name">Ирина Иванова</div>
+                <p class="slider__text">
+                  Привести себя в порядок после родов — желание многих мам.
+                  Пыталась найти информацию в интернете, но хватало максимум на
+                  неделю. Мои впечатления: помогает дисциплинированность. С
+                  таким сервисом где уже все собрано для тебя, с учетом твоих
+                  пожеланий, сразу становится проще. Итоги за месяц тренировок:
+                  удалось сбросить вес, наладить питание, получить новую
+                  информацию, тело подтянулось, и это только начало!
+                </p>
+                <picture class="slider__img"
+                  ><img src="{% static 'images/rev2.jpg' %}" alt
+                /></picture>
+              </div>
+            </div>
+          </div>
+          <div class="slider__btns">
+            <div class="slider__btn slider__btn--prev">
+              <picture
+                ><source srcset="{% static 'images/arrow-prev.webp' %}" type="image/webp" />
+                <img src="{% static 'images/arrow-prev.png' %}" alt
+              /></picture>
+            </div>
+            <div class="slider__btn slider__btn--next">
+              <picture
+                ><source srcset="{% static 'images/arrow-next.webp' %}" type="image/webp" />
+                <img src="{% static 'images/arrow-next.png' %}" alt
+              /></picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq__container container">
+      <h2 class="faq__title title">Вопросы и ответы</h2>
+      <div class="faq__list">
+        <div class="version1">
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__circle"></div>
+              <div class="faq__question-text">
+                Тренировки проходят в какое-то определенное время?
+              </div>
+            </div>
+            <div class="faq__answer">
+              Нет. Все тренировки доступны в вашем личном кабинете, поэтому
+              время и место занятий вы выбираете сами.
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__circle"></div>
+              <div class="faq__question-text">
+                Я никогда не занималась. Подойдут ли мне тренировки?
+              </div>
+            </div>
+            <div class="faq__answer">
+              Да! Наши тренировки по силам новичкам, так как они проходят в
+              формате «повторяй за мной». Не нужно идти в зал, все занятия можно
+              делать дома. Занятия дома подходят даже тем у кого нет времени на
+              фитнес-клуб; кому не хватает самодисциплины и мотивации; у кого
+              нет понимания, как правильно тренироваться и питаться; кому не с
+              кем оставить ребенка.
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__circle"></div>
+              <div class="faq__question-text">
+                Можно ли заменить инвентарь или обойтись без него?
+              </div>
+            </div>
+            <div class="faq__answer">
+              Да, например:<br />1. Спортивный коврик = плед/полотенце.<br />2.
+              Два блока для йоги = две толстые книги.<br />3. Две гантели по 1
+              кг = две бутылки с водой.
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__circle"></div>
+              <div class="faq__question-text">
+                Я живу не в России. Удобно ли мне будет заниматься?
+              </div>
+            </div>
+            <div class="faq__answer">
+              Прелесть в том, что место, где вы живете, не имеет никакого
+              значения. Вам понадобится лишь телефон, планшет или компьютер с
+              доступом в интернет.
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__circle"></div>
+              <div class="faq__question-text">
+                Есть ли противопоказания для занятий?
+              </div>
+            </div>
+            <div class="faq__answer">
+              Беременность, заболевания и патологические состояния,
+              препятствующие допуску к занятиям спортом.
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__circle"></div>
+              <div class="faq__question-text">
+                Указали неправильную почту при оплате
+              </div>
+            </div>
+            <div class="faq__answer">
+              Если при оплате вы указали неправильный электронный адрес,
+              пожалуйста, обратитесь в службу поддержки<span
+                >{{ emailDomain }}</span
+              >, мы вышлем вам письмо с доступом повторно.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} 
+{% block js %}
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/slick.min.js' %}"></script>
+  <script src="{% static 'js/scripts.js' %}" type="module"></script>
+{% endblock js %}
